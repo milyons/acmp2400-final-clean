@@ -17,6 +17,9 @@ jobs:
       - name: Run container
         run: docker run -d -p 8000:8000 django-app
 
+      - name: Show container logs
+        run: docker ps -a && docker logs $(docker ps -alq)
+
       - name: Wait for server
         run: sleep 10
 
